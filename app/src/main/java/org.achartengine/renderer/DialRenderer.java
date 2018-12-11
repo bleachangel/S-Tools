@@ -41,7 +41,7 @@ public class DialRenderer extends DefaultRenderer {
   private List<Type> mVisualTypes = new ArrayList<Type>();
 
   public enum Type {
-    NEEDLE, ARROW;
+    NEEDLE, ARROW
   }
 
   /**

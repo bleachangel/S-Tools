@@ -46,7 +46,7 @@ public class BarChart extends XYChart {
    * The bar chart type enum.
    */
   public enum Type {
-    DEFAULT, STACKED;
+    DEFAULT, STACKED
   }
 
   BarChart() {

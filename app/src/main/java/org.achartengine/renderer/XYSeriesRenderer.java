@@ -62,9 +62,9 @@ public class XYSeriesRenderer extends SimpleSeriesRenderer {
   public static class FillOutsideLine implements Serializable {
     public enum Type {
       NONE, BOUNDS_ALL, BOUNDS_BELOW, BOUNDS_ABOVE, BELOW, ABOVE
-    };
+    }
 
-    /** The fill type. */
+      /** The fill type. */
     private final Type mType;
     /** The fill color. */
     private int mColor = Color.argb(125, 0, 0, 200);

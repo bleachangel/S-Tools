@@ -119,7 +119,7 @@ public class XYMultipleSeriesRenderer extends DefaultRenderer {
     /** The rotate angle. */
     private int mAngle = 0;
 
-    private Orientation(int angle) {
+    Orientation(int angle) {
       mAngle = angle;
     }
 

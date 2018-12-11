@@ -30,22 +30,19 @@ import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity {
 
-	private DrawerLayout mDrawerLayout;
+    private DrawerLayout mDrawerLayout;
     private LinearLayout mLiearLayout;
-	private ListView mDrawerList;
-	private ActionBarDrawerToggle mDrawerToggle;
-	private CharSequence mDrawerTitle;
-	private CharSequence mTitle;
-	private String[] navMenuTitles;
-	private TypedArray navMenuIcons;
-	private ArrayList<NavDrawerItem> navDrawerItems;
-	private NavDrawerListAdapter adapter;
-
+    private ListView mDrawerList;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private CharSequence mDrawerTitle;
+    private CharSequence mTitle;
+    private String[] navMenuTitles;
+    private TypedArray navMenuIcons;
+    private ArrayList<NavDrawerItem> navDrawerItems;
+    private NavDrawerListAdapter adapter;
 
     @Override
-	protected void onCreate(Bundle savedInstanceState) {
-
-
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -57,9 +54,7 @@ public class MainActivity extends ActionBarActivity {
         mLiearLayout = (LinearLayout) findViewById(R.id.drawer_view);
         mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
 
-
         navDrawerItems = new ArrayList<NavDrawerItem>();
-
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], navMenuIcons.getResourceId(0, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], navMenuIcons.getResourceId(1, -1)));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], navMenuIcons.getResourceId(2, -1)));
@@ -76,14 +71,12 @@ public class MainActivity extends ActionBarActivity {
                 navDrawerItems);
         mDrawerList.setAdapter(adapter);
 
-
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
         setSupportActionBar(mToolbar);
-        themeUtils.onActivityCreateSetTheme(this,getSupportActionBar(),this);
+        themeUtils.onActivityCreateSetTheme(this, getSupportActionBar(), this);
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-               mToolbar,
+                mToolbar,
                 R.string.app_name,
                 R.string.app_name
         ) {
@@ -107,7 +100,6 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-
     private class SlideMenuClickListener implements
             ListView.OnItemClickListener {
         @Override
@@ -123,7 +115,6 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
@@ -132,12 +123,9 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-
         switch (item.getItemId()) {
 
             case android.R.id.home:
@@ -147,21 +135,14 @@ public class MainActivity extends ActionBarActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
-
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-
-
-
         return super.onPrepareOptionsMenu(menu);
     }
 
-
     private void displayView(int position) {
-
         Fragment fragment = null;
         switch (position) {
             case 0:
@@ -185,8 +166,6 @@ public class MainActivity extends ActionBarActivity {
             case 6:
                 fragment = new SettingsFragment();
                 break;
-
-
             default:
                 break;
         }
@@ -195,13 +174,10 @@ public class MainActivity extends ActionBarActivity {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction()
                     .replace(R.id.frame_container, fragment).commit();
-
-
             mDrawerList.setItemChecked(position, true);
             mDrawerList.setSelection(position);
             setTitle(navMenuTitles[position]);
         } else {
-
             Log.e("MainActivity", "Error in creating fragment");
         }
     }
@@ -212,20 +188,15 @@ public class MainActivity extends ActionBarActivity {
         getSupportActionBar().setTitle(mTitle);
     }
 
-
-
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-
         mDrawerToggle.syncState();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
 }

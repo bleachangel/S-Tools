@@ -115,7 +115,7 @@ public class DoughnutChart extends RoundChart {
             mRenderer.getLabelsColor(), paint, true, false);
         currentAngle += angle;
       }
-      radius -= (int) mRadius * decCoef;
+      radius -= mRadius * decCoef;
       shortRadius -= mRadius * decCoef - 2;
       if (mRenderer.getBackgroundColor() != 0) {
         paint.setColor(mRenderer.getBackgroundColor());

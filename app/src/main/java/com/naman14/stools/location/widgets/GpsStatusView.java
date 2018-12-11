@@ -135,16 +135,16 @@ public class GpsStatusView extends SquareView {
 		
 		canvas.drawPath(northArrow, northPaint);
 		
-		canvas.drawTextOnPath(((Activity) getContext()).getString(R.string.value_N),
+		canvas.drawTextOnPath(getContext().getString(R.string.value_N),
 				labelPathN, 0, -labelPaint.descent(), labelPaint);
 
-		canvas.drawTextOnPath(((Activity) getContext()).getString(R.string.value_S),
+		canvas.drawTextOnPath(getContext().getString(R.string.value_S),
 				labelPathS, 0, -labelPaint.descent(), labelPaint);
 
-		canvas.drawTextOnPath(((Activity) getContext()).getString(R.string.value_E),
+		canvas.drawTextOnPath(getContext().getString(R.string.value_E),
 				labelPathE, 0, -labelPaint.descent(), labelPaint);
 
-		canvas.drawTextOnPath(((Activity) getContext()).getString(R.string.value_W),
+		canvas.drawTextOnPath(getContext().getString(R.string.value_W),
 				labelPathW, 0, -labelPaint.descent(), labelPaint);
 		
 		if (mSats != null) {

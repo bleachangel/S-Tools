@@ -209,7 +209,7 @@ public class CpuFragment extends Fragment {
 
     private View generateStateRow(CpuState state, ViewGroup parent) {
 
-        LayoutInflater inf = LayoutInflater.from((Context)_app);
+        LayoutInflater inf = LayoutInflater.from(_app);
         LinearLayout theRow = (LinearLayout)inf.inflate(
                 R.layout.state_row, parent, false);
 
